@@ -11,6 +11,7 @@ def main():
     parser.add_argument('--format', type=str, default='openpose', help='Output format: coco/cmu/openpose')
     parser.add_argument('--pose_track', action='store_true', help='Enable tracking')
     parser.add_argument('--save_video', action='store_true', help='Save rendered video')
+    # parser.add_argument('--vis_fast', dest='vis_fast', help='use fast rendering', action='store_true', default=False)
     args = parser.parse_args()
 
     # Ensure the output directory exists
@@ -23,7 +24,7 @@ def main():
         "--checkpoint", args.checkpoint,
         "--video", args.video,
         "--outdir", args.outdir,
-        "--format", args.format
+        "--format", args.format,
     ]
 
     if args.pose_track:
